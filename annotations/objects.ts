@@ -12,6 +12,7 @@ const profile = {
 
 // if we want to destructure the variable 
 // we have to write out the annotation as the assigned value 'profile' requires
+// @ts-ignore
 const { age, name }: { age: number; name: string } = profile
 
 
