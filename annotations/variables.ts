@@ -17,11 +17,11 @@ let colors: string[] = ['red', 'green', 'blue']
 let myNumbers: number[] = [1,2,3]
 
 // Classes
-class Car {
+class Car1 {
 
 }
-// the var car is only ever going to refer to an instance of Car
-let car: Car = new Car()
+// the var car is only ever going to refer to an instance of Car1
+let car1: Car1 = new Car1()
 
 // Object literal
 let point: { x: number; y: number } = {
