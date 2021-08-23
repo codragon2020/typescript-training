@@ -21,6 +21,7 @@
     "@types/google.maps": "^3.45.6",
     "@types/node": "^16.6.1",
     "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
     "faker": "^5.5.3"
   },
   "devDependencies": {

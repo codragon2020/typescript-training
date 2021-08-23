@@ -136932,7 +136932,7 @@ exports.Company = Company;
 
 Object.defineProperty(exports, "__esModule", {
   value: true
-});
+}); /// <reference types="@types/google.maps" />
 
 var User_1 = require("./User");
 
@@ -136943,6 +136943,13 @@ console.log(user); // console.log('test')
 
 var company = new Company_1.Company();
 console.log(company);
+new google.maps.Map(document.getElementById('map'), {
+  zoom: 1,
+  center: {
+    lat: 0,
+    lng: 0
+  }
+});
 },{"./User":"src/User.ts","./Company":"src/Company.ts"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -136971,7 +136978,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63366" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51450" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
