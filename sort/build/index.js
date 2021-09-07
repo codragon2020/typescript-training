@@ -1,5 +1,6 @@
 "use strict";
-console.log('Hi There!');
+console.log(123);
 var logSomething = function () {
     console.log('something');
 };
+logSomething();
