@@ -128,6 +128,7 @@ exports.User = void 0;
 var User = function () {
   function User(data) {
     this.data = data;
+    this.events = {};
   }
 
   User.prototype.get = function (propName) {
@@ -137,6 +138,8 @@ var User = function () {
   User.prototype.set = function (update) {
     Object.assign(this.data, update);
   };
+
+  User.prototype.on = function (eventName, callback) {};
 
   return User;
 }();
