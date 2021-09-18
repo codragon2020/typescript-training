@@ -2369,15 +2369,11 @@ var User = function () {
 
 exports.User = User;
 },{"./Eventing":"src/models/Eventing.ts","./Sync":"src/models/Sync.ts","./Attributes":"src/models/Attributes.ts"}],"src/index.ts":[function(require,module,exports) {
-"use strict"; // import axios from 'axios'
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
-}); // axios.post('http://localhost:3000/users', {
-//     name: 'myname',
-//     age: 20
-// })
-// axios.delete('http://localhost:3000/users/1')
+});
 
 var User_1 = require("./models/User");
 
@@ -2385,19 +2381,6 @@ var user = new User_1.User({
   name: 'new record',
   age: 0
 });
-user.events.on('change', function () {
-  console.log('change!');
-});
-user.events.trigger('change'); // user.on('change', () => {
-//     console.log('Change #1')
-// })
-// user.on('change', () => {
-//     console.log('Change #2')
-// })
-// user.on('save', () => {
-//     console.log('Save was triggered')
-// })
-// user.trigger('change')
 },{"./models/User":"src/models/User.ts"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
