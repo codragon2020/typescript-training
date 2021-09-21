@@ -14,17 +14,20 @@ export class UserForm {
 	eventsMap(): { [key: string]: () => void } {
 		return {
 			'click:.set-age': this.onSetAgeClick,
-            'click:.set-name': this.onSetNameClick
+			'click:.set-name': this.onSetNameClick,
 		};
 	}
 
-    onSetNameClick = (): void => {
-        const input = this.parent.querySelector('input')
+	onSetNameClick = (): void => {
+		const input = this.parent.querySelector('input');
 
-        const name = input.value
+		if (input) {
+			const name = input.value;
 
-        this.model.set({ name })
-    }
+			this.model.set({ name });
+		}
+	};
+
 	onSetAgeClick = (): void => {
 		this.model.setRandomAge();
 	};
@@ -55,7 +58,7 @@ export class UserForm {
 	}
 
 	render(): void {
-        this.parent.innerHTML = ''
+		this.parent.innerHTML = '';
 
 		const templateElement = document.createElement('template');
 		templateElement.innerHTML = this.template();
