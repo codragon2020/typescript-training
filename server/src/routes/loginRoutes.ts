@@ -1,9 +1,13 @@
-import { Router, Request, Response } from 'express'
+import { Router, Request, Response } from 'express';
 
-const router = Router()
+interface RequestWithBody extends Request {
+	body: { [key: string]: string | undefined };
+}
+
+const router = Router();
 
 router.get('/login', (req: Request, res: Response) => {
-    res.send(`
+	res.send(`
         <form method="POST">
             <div>
                 <label>Email</label>
@@ -14,13 +18,18 @@ router.get('/login', (req: Request, res: Response) => {
                 <input name="password" />
             </div>
             <button>Submit</button>
-    `)
-})
+    `);
+});
 
-router.post('/login', (req: Request, res: Response) => {
-    const { email, password } = req.body
+router.post('/login', (req: RequestWithBody, res: Response) => {
+	const { email, password } = req.body;
 
-    res.send(email + password)
-})
+	if (email && password && email === 'hi@hi.com' && password === 'password') {
+        req.session = { loggedIn: true }
+        res.redirect('/')
+	} else {
+		res.send('Invalid email or password');
+	}
+});
 
-export { router }
+export { router };
