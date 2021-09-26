@@ -1,39 +1,39 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
-import { ActionTypes } from './types'
+import { ActionTypes } from './types';
 
 export interface Todo {
-    id: number
-    title: string
-    completed: boolean
+	id: number;
+	title: string;
+	completed: boolean;
 }
 
 export interface FetchTodosAction {
-    type: ActionTypes.fetchTodos
-    payload: Todo[]
+	type: ActionTypes.fetchTodos;
+	payload: Todo[];
 }
 
 export interface DeleteTodoAction {
-    type: ActionTypes.deleteTodo,
-    payload: number
+	type: ActionTypes.deleteTodo;
+	payload: number;
 }
 
-const url = 'https://jsonplaceholder.typicode.com/todos'
+const url = 'https://jsonplaceholder.typicode.com/todos';
 
 export const fetchTodos = () => {
 	return async (dispatch: Dispatch) => {
-        const response = await axios.get<Todo[]>(url)
+		const response = await axios.get<Todo[]>(url);
 
-        dispatch<FetchTodosAction>({
-            type: ActionTypes.fetchTodos,
-            payload: response.data
-        })
-    };
+		dispatch<FetchTodosAction>({
+			type: ActionTypes.fetchTodos,
+			payload: response.data,
+		});
+	};
 };
 
 export const deleteTodo = (id: number): DeleteTodoAction => {
-    return {
-        type: ActionTypes.deleteTodo,
-        payload: id
-    }
-}
+	return {
+		type: ActionTypes.deleteTodo,
+		payload: id,
+	};
+};
